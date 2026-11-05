@@ -8,8 +8,8 @@ RUN pip3 install --no-cache-dir --break-system-packages gevent
 # ---
 FROM ${BASE}
  
-COPY --from=builder /usr/local/lib/python3.12/site-packages/gevent /usr/local/lib/python3.12/site-packages/gevent
-COPY --from=builder /usr/local/lib/python3.12/site-packages/greenlet /usr/local/lib/python3.12/site-packages/greenlet
+COPY --from=builder /usr/local/lib/python3.15/site-packages/gevent /usr/local/lib/python3.15/site-packages/gevent
+COPY --from=builder /usr/local/lib/python3.15/site-packages/greenlet /usr/local/lib/python3.15/site-packages/greenlet
 
 COPY python3-requirements.txt /
 RUN pip3 install --no-cache-dir --break-system-packages setuptools && pip3 install --no-cache-dir --break-system-packages -r python3-requirements.txt
