@@ -1,4 +1,4 @@
-ARG BASE=python:3.12-alpine
+ARG BASE=python:3.15-alpine
 FROM ${BASE} AS builder
  
 RUN apk add --no-cache build-base gcc libffi-dev musl-dev linux-headers
